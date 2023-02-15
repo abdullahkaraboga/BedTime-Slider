@@ -14,6 +14,7 @@
 		7BCF64A3299C36CF00CF1668 /* BedTimeSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF64A2299C36CF00CF1668 /* BedTimeSliderTests.swift */; };
 		7BCF64AD299C36CF00CF1668 /* BedTimeSliderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF64AC299C36CF00CF1668 /* BedTimeSliderUITests.swift */; };
 		7BCF64AF299C36CF00CF1668 /* BedTimeSliderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF64AE299C36CF00CF1668 /* BedTimeSliderUITestsLaunchTests.swift */; };
+		7BCF64BD299C37DA00CF1668 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF64BC299C37DA00CF1668 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		7BCF64A8299C36CF00CF1668 /* BedTimeSliderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BedTimeSliderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BCF64AC299C36CF00CF1668 /* BedTimeSliderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedTimeSliderUITests.swift; sourceTree = "<group>"; };
 		7BCF64AE299C36CF00CF1668 /* BedTimeSliderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedTimeSliderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BCF64BC299C37DA00CF1668 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		7BCF6490299C36CC00CF1668 /* BedTimeSlider */ = {
 			isa = PBXGroup;
 			children = (
+				7BCF64BB299C37CA00CF1668 /* View */,
 				7BCF6491299C36CC00CF1668 /* BedTimeSliderApp.swift */,
 				7BCF6493299C36CC00CF1668 /* ContentView.swift */,
 				7BCF6495299C36CF00CF1668 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				7BCF64AE299C36CF00CF1668 /* BedTimeSliderUITestsLaunchTests.swift */,
 			);
 			path = BedTimeSliderUITests;
+			sourceTree = "<group>";
+		};
+		7BCF64BB299C37CA00CF1668 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BCF64BC299C37DA00CF1668 /* Home.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BCF6494299C36CC00CF1668 /* ContentView.swift in Sources */,
+				7BCF64BD299C37DA00CF1668 /* Home.swift in Sources */,
 				7BCF6492299C36CC00CF1668 /* BedTimeSliderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
