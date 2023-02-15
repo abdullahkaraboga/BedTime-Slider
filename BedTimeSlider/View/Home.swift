@@ -31,6 +31,52 @@ struct Home: View {
             SleepTimeSlider()
                 .padding(.top, 50)
 
+            Button {
+
+            } label: {
+                Text("Start Sleep")
+                    .foregroundColor(.white)
+                    .padding(.vertical)
+                    .padding(.horizontal, 40)
+                    .background((.blue), in: Capsule())
+            }
+                .padding(.top, 45)
+
+            HStack(spacing: 25) {
+
+                VStack {
+                    Label {
+                        Text("Bedtime")
+                            .foregroundColor(.black)
+                    } icon: {
+                        Image(systemName: "moon.fill")
+                            .foregroundColor(.blue)
+                    }
+                        .font(.callout)
+                    Text(getTime(angle: startAngle).formatted(date: .omitted, time: .shortened))
+                        .font(.title2.bold())
+                }
+                    .frame(maxWidth: .infinity, alignment: .center)
+
+                VStack {
+                    Label {
+                        Text("Wakeup")
+                            .foregroundColor(.black)
+                    } icon: {
+                        Image(systemName: "alarm")
+                            .foregroundColor(.blue)
+                    }
+                        .font(.callout)
+                    Text(getTime(angle: toAngle).formatted(date: .omitted, time: .shortened))
+                        .font(.title2.bold())
+                }
+                    .frame(maxWidth: .infinity, alignment: .center)
+
+            }
+                .padding()
+                .background(.black.opacity(0.06), in: RoundedRectangle(cornerRadius: 15))
+                .padding(.top, 35)
+
         }
             .padding()
             .frame(maxHeight: .infinity, alignment: .top)
@@ -112,9 +158,9 @@ struct Home: View {
 
 
                 VStack(spacing: 6) {
-                    Text("4 hr")
+                    Text("\(getTimeDifference().0) hr")
                         .font(.largeTitle.bold())
-                    Text("39 min")
+                    Text("\(getTimeDifference().1) min")
                         .foregroundColor(.gray)
                 }
                     .scaleEffect(1.1)
@@ -147,6 +193,34 @@ struct Home: View {
             self.toProgress = progress
         }
 
+    }
+
+    func getTime (angle: Double) -> Date {
+
+        let progress = angle / 30
+
+        let hour = Int(progress)
+
+        let remainder = (progress.truncatingRemainder(dividingBy: 1) * 12).rounded()
+
+        var minute = remainder * 5
+        minute = (minute > 55 ? 55 : minute)
+
+        let formatter = DateFormatter()
+
+        formatter.dateFormat = "hh:mm:ss"
+
+        if let date = formatter.date(from: "\(hour):\(Int(remainder)):00") {
+            return date
+        }
+        return .init()
+    }
+
+    func getTimeDifference() -> (Int, Int) {
+        let calendar = Calendar.current
+
+        let result = calendar.dateComponents([.hour, .minute], from: getTime(angle: startAngle), to: getTime(angle: toAngle))
+        return (result.hour ?? 0, result.minute ?? 0)
     }
 }
 
